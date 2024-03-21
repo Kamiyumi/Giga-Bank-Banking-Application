@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="761.0" prefWidth="870.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.lu.ics.controllers.MainViewController">
+    <children>
+        <TextField fx:id="textFieldCustomerIdentificationNumber" layoutX="46.0" layoutY="76.0" promptText="Person ID:">
+         <effect>
+            <InnerShadow radius="4.75" width="0.0" />
+         </effect></TextField>
+        <TextField fx:id="textFieldCustomerName" layoutX="46.0" layoutY="116.0" promptText="Name:">
+         <effect>
+            <InnerShadow radius="4.75" width="0.0" />
+         </effect></TextField>
+        <TextField fx:id="textFieldCustomerAge" layoutX="46.0" layoutY="157.0" promptText="Age:">
+         <effect>
+            <InnerShadow radius="4.75" width="0.0" />
+         </effect></TextField>
+        <TextField fx:id="textFieldAccountId" layoutX="233.0" layoutY="76.0" promptText="Account number:">
+         <effect>
+            <InnerShadow radius="4.75" width="0.0" />
+         </effect></TextField>
+        <TextField fx:id="textFieldInitialBalance" layoutX="233.0" layoutY="116.0" promptText="Initial balance:">
+         <effect>
+            <InnerShadow radius="4.75" width="0.0" />
+         </effect></TextField>
+        <TextField fx:id="textFieldAccountHolder" layoutX="233.0" layoutY="157.0" promptText="Person ID:">
+         <effect>
+            <InnerShadow radius="4.75" width="0.0" />
+         </effect></TextField>
+        <TextField fx:id="textFieldAccountToUse" layoutX="46.0" layoutY="278.0" promptText="Account number:">
+         <effect>
+            <InnerShadow radius="4.75" width="0.0" />
+         </effect></TextField>
+        <TextField fx:id="textFieldAmount" layoutX="46.0" layoutY="308.0" promptText="Insert amount:">
+         <effect>
+            <InnerShadow radius="4.75" width="0.0" />
+         </effect></TextField>
+        <Button fx:id="buttonDeposit" layoutX="46.0" layoutY="341.0" onAction="#handleButtonDepositAction" prefHeight="18.0" prefWidth="71.0" text="Deposit">
+         <effect>
+            <InnerShadow radius="4.75" width="0.0" />
+         </effect></Button>
+        <Button fx:id="buttonWithdraw" layoutX="123.0" layoutY="341.0" onAction="#handleButtonWithdrawAction" prefHeight="25.0" prefWidth="71.0" text="Withdraw">
+         <effect>
+            <InnerShadow radius="4.75" width="0.0" />
+         </effect></Button>
+        <TextField fx:id="textFieldTotalBalance" editable="false" layoutX="234.0" layoutY="279.0" prefHeight="57.0" prefWidth="166.0" promptText="Balance:">
+         <effect>
+            <InnerShadow height="10.5" radius="2.125" width="0.0" />
+         </effect></TextField>
+        <TextArea fx:id="textAreaAllPersonsInfo" editable="false" layoutX="45.0" layoutY="377.0" prefHeight="111.0" prefWidth="394.0" promptText="General information displayed here:">
+         <effect>
+            <InnerShadow radius="4.75" width="0.0" />
+         </effect></TextArea>
+        <Button fx:id="buttonCustomerAdd" layoutX="44.0" layoutY="197.0" onAction="#handleButtonCustomerAddAction" prefHeight="25.0" prefWidth="147.0" text="Add person">
+         <effect>
+            <InnerShadow radius="4.75" width="0.0" />
+         </effect></Button>
+        <Button fx:id="buttonAddAccount" layoutX="234.0" layoutY="197.0" onAction="#handleButtonAccountAddAction" prefHeight="25.0" prefWidth="149.0" text="Add Account">
+         <effect>
+            <InnerShadow radius="4.75" width="0.0" />
+         </effect></Button>
+      <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="870.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="System">
+            <items>
+              <MenuItem fx:id="buttonExitProgram" mnemonicParsing="false" onAction="#handleExitButtonAction" text="Exit " />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Actions">
+              <items>
+                  <MenuItem fx:id="buttonCustomerFind" mnemonicParsing="false" onAction="#handleButtonCustomerFindAction" text="Find Person" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem fx:id="buttonCustomerRemove" mnemonicParsing="false" onAction="#handleButtonCustomerRemoveAction" text="Remove Person" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="buttonFindAccount" mnemonicParsing="false" onAction="#handleButtonFindAccountAction" text="Find Account" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem fx:id="buttonDisplayAccountInfo" mnemonicParsing="false" onAction="#handleButtonDisplayAccountInfoAction" text="Display Account Information" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem fx:id="buttonPrintAllPersonsInfo" mnemonicParsing="false" onAction="#handleButtonPrintAllPersonsInfoAction" text="Print all information" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="buttonShowTotalBalanceAllAccounts" mnemonicParsing="false" onAction="#handleButtonShowTotalBalanceAllAccountsAction" text="Show total balance of all accounts" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="About">
+              <items>
+                <MenuItem fx:id="buttonAboutUs" mnemonicParsing="false" onAction="#handleButtonAboutUs" text="About us" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Test">
+              <items>
+                <MenuItem fx:id="buttonTest" mnemonicParsing="false" onAction="#handleButtonTestAction" text="Test data" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <TableView fx:id="tableView" layoutY="496.0" prefHeight="251.0" prefWidth="870.0" style="-fx-background-color: #D3D3D3;">
+    <columns>
+        <TableColumn fx:id="nameColumn" text="Name" />
+        <TableColumn fx:id="ageColumn" prefWidth="53.71434783935547" text="Age" />
+        <TableColumn fx:id="idColumn" prefWidth="122.28565979003906" text="Person ID:" />
+        <TableColumn fx:id="accountsColumn" prefWidth="612.5713588169643" text="Account Information" />
+    </columns>
+</TableView>
+      <Label fx:id="labelCustomerIdentificationNumber1" layoutX="70.0" layoutY="44.0" text="Add person" textFill="#0d0808">
+         <font>
+            <Font name="Segoe UI Bold" size="17.0" />
+         </font>
+         <effect>
+            <DropShadow height="1.0" radius="0.0" width="0.0" />
+         </effect>
+      </Label>
+      <Label fx:id="labelCustomerIdentificationNumber11" layoutX="254.0" layoutY="44.0" text="Add account" textFill="#0d0808">
+         <font>
+            <Font name="Segoe UI Bold" size="17.0" />
+         </font>
+         <effect>
+            <DropShadow height="1.0" radius="0.0" width="0.0" />
+         </effect>
+      </Label>
+      <Line endX="73.71429443359375" endY="-3.814697265625E-6" layoutX="306.0" layoutY="67.0" startX="-72.57147979736328" startY="-3.814697265625E-6" />
+      <Line endX="73.71429443359375" endY="-3.814697265625E-6" layoutX="119.0" layoutY="68.0" startX="-72.57147979736328" startY="-3.814697265625E-6" />
+      <Line endX="368.49285888671875" endY="1.41424560546875" layoutX="74.0" layoutY="265.0" startX="-72.57147979736328" startY="-3.814697265625E-6" stroke="#cfb5b5" strokeWidth="5.0" />
+      <Line endX="328.0283508300781" endY="-113.35" layoutX="118.0" layoutY="380.0" startX="328.0283508300781" startY="-351.0" stroke="#cfb5b5" strokeWidth="5.0" />
+      <Line endX="328.0283508300781" endY="-118.5" layoutX="118.0" layoutY="612.0" startX="328.0283508300781" startY="-351.0" stroke="#cfb5b5" strokeWidth="5.0" />
+     
+      <Label fx:id="labelCustomerIdentificationNumber12" layoutX="449.0" layoutY="481.0" opacity="0.16" prefHeight="1.0" prefWidth="112.0" text="©Group25" textFill="#0d0808">
+         <font>
+            <Font name="Segoe UI Italic" size="11.0" />
+         </font>
+         <effect>
+            <DropShadow height="1.0" radius="0.0" width="0.0" />
+         </effect>
+      </Label>
+      <ImageView fitHeight="251.0" fitWidth="342.0" layoutX="528.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="gigaLogo.png" />
+         </image>
+      </ImageView>
+      
+      
+    </children>
+</AnchorPane>
